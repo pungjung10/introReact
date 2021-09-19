@@ -1,54 +1,29 @@
 import React from 'react';    //allow to use jsx code(tell compiler)
-import Employee from './Employee';
+import Destructuring from './destructuring';
 import './App.css';
 
-
-const employeeInfo = [
-  {
-    firstName: "Jack",
-    lastName: "Smith",
-    age: 21,
-    employeeId: "1",
-  },
-  {
-    firstName: "Pung",
-    lastName: "Ping",
-    age: 21,
-    employeeId: "2",
-  },
-  {
-    firstName: "Jung",
-    lastName: "Kung",
-    age: 21,
-    employeeId: "3",
-  },
-  {
-    firstName: "Hiw",
-    lastName: "Mak",
-    age: 21,
-    employeeId: "4",
-  },
-]
+const employee = {
+  id: "ABC",
+  name: "Nacha",
+  salary: "$3000",
+  address: {
+    salary: "$30000",
+    street: "210 Washington Street",
+    country: "Canada",
+    province: "Ontario",
+    zone:{
+      plantZone: "78",
+      alienZone: "41",
+    }
+  }
+}
 
 function App() {
-
-  //map - edit/look though each item in an array
   return (
     <div className="App">
       <header className="App-header">
-        <h1> Company Directory </h1>
-        {employeeInfo.map(employee => {
-          //const {firstName, lastName, age} = employee //pull out variables to object
-          return(
-            //<Employee firstName={firstName} lastName={lastName} age = {age}/>
-            <Employee key={employee.employeeId} {...employee}/> //spread
-          )
-        })}
-
-        {/* <Employee firstName="Jack" lastName="Smith" age = "21"/>
-        <Employee firstName="Pung" lastName="Ping" age = "21"/>
-        <Employee firstName="Jung" lastName="Kung" age = "21"/>
-        <Employee firstName="Hiw" lastName="Mak" age = "21"/> */}
+        <h1> Destructuring </h1>
+        <Destructuring {...employee}/>
       </header>
     </div>
   );
